@@ -5,10 +5,13 @@ import useUsers from '../hooks/useUser';
 export const UserContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const { user, login, userMessage } = useUsers();
+  const {
+    user, login, userMessage, logout,
+  } = useUsers();
+
   return (
     <UserContext.Provider value={{
-      user, login, userMessage,
+      user, login, userMessage, logout,
     }}
     >
       {children}

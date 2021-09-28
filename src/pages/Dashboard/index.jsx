@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import StudentDashboard from '../../components/studentDashboard';
+import { StudentProvider } from '../../context/studentContext';
 import { UserContext } from '../../context/userContext';
 
 function Dashboard() {
@@ -7,7 +8,9 @@ function Dashboard() {
 
   if (user.type === 'student') {
     return (
-      <StudentDashboard />
+      <StudentProvider>
+        <StudentDashboard />
+      </StudentProvider>
     );
   }
 

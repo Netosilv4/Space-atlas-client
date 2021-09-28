@@ -1,30 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
-import { UserContext } from '../../context/userContext';
+import React, { useContext } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { DashboardWrapper } from './styles';
-import StudentBasics from '../studentBasics';
 import Sidebar from '../sidebar';
+import { studentContext } from '../../context/studentContext';
+import BasicInfo from './basicInfo';
+import Loading from '../loading';
+import Notifications from './notifications';
+import Requests from '../requests';
 
 function StudentDashboard() {
-  const { user } = useContext(UserContext);
-
-  const [student, setStudent] = useState();
-
-  useEffect(async () => {
-    axios.defaults.headers.authorization = `Bearer ${user.token}`;
-
-    const { data } = await axios.post('http://localhost:8080/student', {
-      register: user.register,
-    });
-    setStudent({ ...data.student });
-  }, []);
-
+  const { student } = useContext(studentContext);
   return student ? (
     <DashboardWrapper>
-      <Sidebar name={student.basicInfo.name} />
-      <StudentBasics />
+      <Sidebar />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/request" component={Requests} />
+          <Route path="/" component={BasicInfo} />
+        </Switch>
+      </BrowserRouter>
+      <Notifications />
     </DashboardWrapper>
-  ) : <h1>Loading</h1>;
+  ) : (
+    <DashboardWrapper style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Loading />
+    </DashboardWrapper>
+  );
 }
 
 export default StudentDashboard;
