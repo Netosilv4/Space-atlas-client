@@ -37,6 +37,7 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3vw;
+  justify-content: space-between;
   gap: 20px;
 `;
 
@@ -50,8 +51,14 @@ export const Adress = styled.div`
     rgb(85, 149, 180)
   );
   animation: ${dropDown} 700ms normal;
+  transform: translateY(-150px);
+  margin-bottom: -150px;
   h2 {
-    font-size: 15px;
+      text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 4px;
   }
   p {
     font-size: 12px;
@@ -59,8 +66,10 @@ export const Adress = styled.div`
 `;
 
 export const Contact = styled.div`
-  width: 200px;
+  width: 100%;
+  height: 100px;
   padding: 10px;
+  margin: 0 auto;
   border: 3px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient( 45deg,
@@ -69,7 +78,12 @@ export const Contact = styled.div`
   );
   animation: ${dropDown} 1500ms normal;
   h2 {
-    font-size: 15px;
+      text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
   }
   p {
     font-size: 12px;
@@ -77,7 +91,7 @@ export const Contact = styled.div`
 `;
 
 export const Peronal = styled.div`
-  width: 200px;
+  width: 90%;
   padding: 10px;
   border: 3px solid;
   border-image-slice: 1;
@@ -87,9 +101,19 @@ export const Peronal = styled.div`
   );
   animation: ${dropDown} 1500ms normal;
   h2 {
-    font-size: 15px;
+      text-align: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 4px;
   }
   p {
     font-size: 12px;
   }
+`;
+
+export const Parents = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 `;
