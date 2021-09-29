@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { DashboardWrapper } from './styles';
 import Sidebar from '../sidebar';
 import { studentContext } from '../../context/studentContext';
@@ -10,9 +11,12 @@ import Requests from '../requests';
 
 function StudentDashboard() {
   const { student } = useContext(studentContext);
+  const [showSideBar, setSideBar] = useState(false);
+
   return student ? (
     <DashboardWrapper>
-      <Sidebar />
+      <Sidebar showSideBar={showSideBar} setSideBar={setSideBar} />
+      <GiHamburgerMenu color="black" size="30px" onClick={() => setSideBar(!showSideBar)} />
       <BrowserRouter>
         <Switch>
           <Route exact path="/request" component={Requests} />

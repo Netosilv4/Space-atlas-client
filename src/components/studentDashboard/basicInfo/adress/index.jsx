@@ -11,7 +11,6 @@ function Adress() {
   return (
     <AdressInfo>
       <BoxTitle>Endereço</BoxTitle>
-      <hr />
       <AdressWrapper>
         <InfoContainer>
           <InfoTitle>Cidade</InfoTitle>
