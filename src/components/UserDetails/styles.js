@@ -37,6 +37,7 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3vw;
+  gap: 20px;
 `;
 
 export const Adress = styled.div`
@@ -48,7 +49,43 @@ export const Adress = styled.div`
     rgb(65, 51, 122),
     rgb(85, 149, 180)
   );
-  animation: ${dropDown} 500ms normal;
+  animation: ${dropDown} 700ms normal;
+  h2 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 12px;
+  }
+`;
+
+export const Contact = styled.div`
+  width: 200px;
+  padding: 10px;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient( 45deg,
+    rgb(65, 51, 122),
+    rgb(85, 149, 180)
+  );
+  animation: ${dropDown} 1500ms normal;
+  h2 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 12px;
+  }
+`;
+
+export const Peronal = styled.div`
+  width: 200px;
+  padding: 10px;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient( 45deg,
+    rgb(65, 51, 122),
+    rgb(85, 149, 180)
+  );
+  animation: ${dropDown} 1500ms normal;
   h2 {
     font-size: 15px;
   }
