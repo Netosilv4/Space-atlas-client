@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DashboardWrapper = styled.main`
+export const Main = styled.main`
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;

@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
-background-color: whitesmoke;
+  background: linear-gradient( 45deg,
+    rgb(65, 51, 122),
+    rgb(85, 149, 180)
+  );
 height: 100vh;
 padding:1vh 2vw;
 position: fixed;
@@ -14,10 +17,11 @@ justify-content: space-between;
 transition: ease-in-out 700ms;
 .closeBtn {
   align-self: flex-end;
+  color: white;
 }
 @media(min-width: 768px) {
   width: 5%;
-  color: black;
+  color: white;
   height: 80vh;
   display: flex;
   justify-content: center;

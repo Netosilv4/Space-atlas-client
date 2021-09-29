@@ -1,26 +1,26 @@
 import React, { useContext } from 'react';
-import { MdClear, MdNotificationsActive } from 'react-icons/md';
+import { MdNotificationsActive, MdClose } from 'react-icons/md';
 import {
-  Container, HeaderWrapper, NotTitle,
+  Container, HeaderWrapper, NotTitle, Button,
 } from './styles';
-import { DashboardButton } from '../styles';
 import { studentContext } from '../../../context/studentContext';
 
 function Notifications() {
   const { displayNotifications, setDisplayNotifications } = useContext(studentContext);
+  const desktop = window.innerWidth > 768;
   return (
     <Container show={displayNotifications}>
+      <MdClose
+        color="black"
+        size={desktop ? '2vw' : '25px'}
+        onClick={() => setDisplayNotifications(!displayNotifications)}
+        className="closeBtn"
+      />
       <HeaderWrapper>
-        <MdNotificationsActive color="white" size="2vw" />
-        <NotTitle>Notificações</NotTitle>
-        <MdClear
-          color="white"
-          size="2vw"
-          style={{ cursor: 'pointer' }}
-          onClick={() => setDisplayNotifications(!displayNotifications)}
-        />
+        <MdNotificationsActive color="black" size={desktop ? '2vw' : '20px'} />
+        <NotTitle>NOTIFICAÇÕES</NotTitle>
       </HeaderWrapper>
-      <DashboardButton style={{ backgroundColor: 'white', color: '#243B57' }}>Limpar Todas</DashboardButton>
+      <Button>Limpar Todas</Button>
     </Container>
   );
 }

@@ -2,26 +2,47 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   position: fixed;
-  right: ${(props) => (props.show ? '0%' : '-30%')};
+  right: 0;
+  bottom: ${(props) => (props.show ? '0' : '-100vh')};
   height: 100vh;
-  background-color: #243B57;
-  width: 20%;
+  width: 65vw;
+  padding: 1vh 2vw;
   z-index: 100;
-  transition: 0.5s;
-  box-shadow: 0 0 1vw 0.7vw black ;
+  transition: ease-in-out 500ms;
   display: flex;
   flex-direction: column;
+  background-color: whitesmoke;
   align-items: center;
+  .closeBtn {
+    align-self: flex-end;
+    cursor: pointer;
+    
+  }
 `;
 
 export const NotTitle = styled.h1`
-  color: white;
   text-align: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 4px;
 `;
 
 export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-around;
-  padding-top: 4vh;
   width: 100%;
+  padding: 40px 0 20px 0;
+`;
+
+export const Button = styled.button`
+  background: linear-gradient( 45deg,
+    rgb(65, 51, 122),
+    rgb(85, 149, 180)
+  );
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size:12px;
+  border: 1px solid gray;
 `;
