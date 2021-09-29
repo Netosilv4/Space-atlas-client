@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
 background-color: whitesmoke;
-height: 98vh;
+height: 100vh;
 padding:1vh 2vw;
 position: fixed;
-width: 31vw;
+width: 35vw;
 z-index: 1000;
 left: ${(props) => (props.showSideBar ? '0' : '-100vw')};
 display: flex;
