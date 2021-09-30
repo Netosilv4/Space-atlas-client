@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import {
   Section, H2, P, Button, InputFile,
 } from './styles';
+import studentFields from '../../helper/studentFields';
 
 const Requests = () => (
   <Section>
@@ -20,9 +21,7 @@ const Requests = () => (
         labelId="demo-simple-select-label"
         id="demo-simple-select"
       >
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
+        {studentFields.map((e) => <MenuItem value={e}>{e}</MenuItem>)}
       </Select>
     </FormControl>
     <P>Alterar para:</P>
