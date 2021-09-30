@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 const Div = styled.div`
   width: 100%;
-  padding: 10px;
-  border: 2px solid rgb(85, 149, 180);
-  border-radius: 8px;
-  animation: dropDown 500ms normal;
+  animation: dropDown 1s normal;
+  margin-bottom: 50px;
   h2 {
   word-break: break-word;
   text-align: center;
@@ -21,9 +19,10 @@ const Div = styled.div`
     margin-top: 10px;
   }
   span {
+    color: rgba(0, 0, 0, 0.5);
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.6);
     text-align: left;
+    font-weight: 700;
   }
 `;
 

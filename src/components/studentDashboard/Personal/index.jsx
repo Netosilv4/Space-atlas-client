@@ -16,9 +16,13 @@ const Personal = () => {
       <span>{student.basicInfo.age}</span>
       <p>Data de nascimento:</p>
       <span>{student.basicInfo.birthDate.split('T')[0]}</span>
+      <p>Turma: </p>
+      <span>{student.basicInfo.class}</span>
+      <p>Sexo: </p>
+      <span>{student.basicInfo.genre}</span>
       <p>Pais:</p>
       <Parents>
-        <IoMdMan color="black" size="25px" />
+        <IoMdMan color="black" size="30px" />
         <p>{student.basicInfo.parents.father}</p>
       </Parents>
       <Parents>

@@ -6,6 +6,15 @@ export const Main = styled.main`
   overflow-x: hidden;
 `;
 
+export const Div = styled.section`
+  width:90vw;
+  height: 91vh;
+  margin: auto;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  overflow-y: scroll;
+`;
+
 export const DashboardContainer = styled.section`
 `;
 

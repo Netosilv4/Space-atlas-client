@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 export const Div = styled.div`
   width: 100%;
-  padding: 10px;
-  border: 2px solid rgb(85, 149, 180);
-  border-radius: 8px;
-  animation: dropDown 200ms linear;
+  animation: dropDown 500ms normal;
+  margin-bottom: 50px;
   h2 {
   word-break: break-word;
   text-align: center;
@@ -21,14 +19,14 @@ export const Div = styled.div`
     margin-top: 10px;
   }
   span {
+    color: rgba(0, 0, 0, 0.5);
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.6);
     text-align: left;
+    font-weight: 700;
   }
 `;
 
 export const Parents = styled.div`
-  color: rgba(0, 0, 0, 0.6);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -37,6 +35,7 @@ export const Parents = styled.div`
   margin-bottom: 15px;
   p {
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
   }
 `;

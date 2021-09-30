@@ -1,28 +1,25 @@
 import React from 'react';
 import {
-  Section, Img, Div,
+  Img, Div, Button,
 } from './styles';
 import Adress from '../studentDashboard/adress';
 import Contact from '../studentDashboard/Contact';
 import Personal from '../studentDashboard/Personal';
 
 const UserDetails = () => (
-  <Section>
-    <Div>
-      <div style={{ width: '30%' }}>
-        <Img src="./avatarNeto.jpg" alt="Foto do estudante" />
-      </div>
-      <div style={{ width: '60%' }}>
-        <Personal />
-      </div>
-      <div style={{ width: '70%' }}>
-        <Adress />
-      </div>
-      <div style={{ width: '100%' }}>
-        <Contact />
-      </div>
-    </Div>
-  </Section>
+  <Div>
+    <Img src="./avatarNeto.jpg" alt="Foto do estudante" />
+    <Button>Solicitar Alteração</Button>
+    <div style={{ width: '100%' }}>
+      <Personal />
+    </div>
+    <div style={{ width: '100%' }}>
+      <Adress />
+    </div>
+    <div style={{ width: '100%' }}>
+      <Contact />
+    </div>
+  </Div>
 );
 
 export default UserDetails;
