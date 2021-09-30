@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   position: fixed;
-  right: 0;
+  left: 0;
   bottom: ${(props) => (props.show ? '0' : '-100vh')};
   height: 100vh;
   width: 65vw;
@@ -16,7 +16,6 @@ export const Container = styled.aside`
   .closeBtn {
     align-self: flex-end;
     cursor: pointer;
-    
   }
 `;
 
