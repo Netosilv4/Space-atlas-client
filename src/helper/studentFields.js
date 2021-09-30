@@ -1,3 +1,4 @@
-const studentFields = ['name', 'genre', 'class', 'age', 'birthDate', 'phone', 'email', 'photo', 'mother', 'father', 'city', 'district', 'street', 'state', 'cep', 'number'];
+const studentFields = [
+  'Nome', 'Sexo', 'Classe', 'Idade', 'Data de nascimento', 'Telefone', 'E-mail', 'Foto', 'Mãe', 'Pai', 'Cidade', 'Bairro', 'Rua ', 'Estado ', ' CEP ', ' Número '];
 
 export default studentFields;
