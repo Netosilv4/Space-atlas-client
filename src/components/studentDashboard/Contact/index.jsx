@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { studentContext } from '../../../context/studentContext';
-import Div from './styles';
+import Container from './styles';
 
 const Contact = () => {
   const { student } = useContext(studentContext);
   return (
-    <Div>
+    <Container>
       <h2>
         CONTATO
       </h2>
@@ -13,7 +13,7 @@ const Contact = () => {
       <span>{student.basicInfo.phone}</span>
       <p>Email:</p>
       <span>{student.basicInfo.email}</span>
-    </Div>
+    </Container>
   );
 };
 

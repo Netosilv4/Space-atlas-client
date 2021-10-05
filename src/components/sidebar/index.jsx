@@ -5,12 +5,16 @@ import {
   MdPersonPin, MdAlarm, MdSchool, MdBuild, MdKeyboardReturn, MdClose,
 } from 'react-icons/md';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { H4 } from '../UI-Components/styles';
 import { studentContext } from '../../context/studentContext';
 import { UserContext } from '../../context/userContext';
-import { SidebarWrapper, Div, H4 } from './styles';
+import { SidebarWrapper, Div } from './styles';
 
-function Sidebar({ showSideBar, setSideBar }) {
-  const { setDisplayNotifications, displayNotifications } = useContext(studentContext);
+function Sidebar({ showSideBar, setSideBar, history }) {
+  const {
+    setDisplayNotifications, displayNotifications, selected,
+  } = useContext(studentContext);
   const { logout } = useContext(UserContext);
   const desktop = window.innerWidth > 768;
   return (
@@ -24,15 +28,15 @@ function Sidebar({ showSideBar, setSideBar }) {
           <MdNotificationsActive color={displayNotifications ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
           NOTIFICAÇÕES
         </H4>
-        <H4>
-          <MdPersonPin color="white" size={desktop ? '2vw' : '20px'} />
+        <H4 onClick={() => history.push('/')} select={selected === '' || selected === '/'}>
+          <MdPersonPin color={selected === '' || selected === '/' ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
           DETALHES
         </H4>
-        <H4>
-          <MdAlarm color="white" size={desktop ? '2vw' : '20px'} />
+        <H4 onClick={() => history.push('/schedule')} select={selected === '/schedule'}>
+          <MdAlarm color={selected === '/schedule' ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
           HORÁRIOS
         </H4>
-        <H4>
+        <H4 onClick={() => history.push('/grades')} select={selected === '/grades'}>
           <MdSchool color="white" size={desktop ? '2vw' : '20px'} />
           AVALIAÇÕES
         </H4>
@@ -49,6 +53,7 @@ function Sidebar({ showSideBar, setSideBar }) {
 Sidebar.propTypes = {
   showSideBar: PropTypes.bool.isRequired,
   setSideBar: PropTypes.func.isRequired,
+  history: PropTypes.objectOf(String).isRequired,
 };
 
-export default Sidebar;
+export default withRouter(Sidebar);

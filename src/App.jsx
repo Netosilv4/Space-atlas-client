@@ -11,11 +11,7 @@ function App() {
 
   if (user) {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={Dashboard} />
-        </Switch>
-      </BrowserRouter>
+      <Dashboard />
     );
   }
 

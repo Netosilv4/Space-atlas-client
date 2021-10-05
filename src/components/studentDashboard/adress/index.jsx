@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import Div from './styles';
+import Container from './styles';
 import { studentContext } from '../../../context/studentContext';
 
 const Adress = () => {
   const { student } = useContext(studentContext);
   return (
-    <Div>
+    <Container>
       <h2>
         ENDEREÇO
       </h2>
@@ -17,7 +17,7 @@ const Adress = () => {
       <span>{`${student.adress.city}, ${student.adress.cep}`}</span>
       <p>Estado:</p>
       <span>{student.adress.state}</span>
-    </Div>
+    </Container>
   );
 };
 

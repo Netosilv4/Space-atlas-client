@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Div = styled.div`
+export const Container = styled.div`
   width: 100%;
   animation: dropDown 500ms normal;
   margin-bottom: 50px;

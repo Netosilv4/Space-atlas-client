@@ -1,23 +1,23 @@
 import axios from 'axios';
 
-const useRequest = (student) => {
-  const sendRequest = async (previewValue, newValue, reason, file) => {
+const useRequest = () => {
+  const sendRequest = async (student, target, newValue, reason) => {
     const request = {
-      name: student.basicInfo.name,
       register: student.auth.register,
-      previewValue,
+      name: student.basicInfo.name,
+      target,
       newValue,
       reason,
-      file,
     };
-    const response = await axios.post('localhost:3000/request', {
+    return axios.post('http://localhost:8080/request', {
+      register: student.auth.register,
       request,
     });
-    return response;
   };
+
   return {
     sendRequest,
   };
 };
 
-export default useRequest();
+export default useRequest;
