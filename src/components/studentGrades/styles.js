@@ -8,26 +8,26 @@ export const Container = styled.div`
   word-break: break-word;
   text-align: center;
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 4px;
   margin-bottom: 40px;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     text-align: left;
     margin-top: 10px;
   }
   span {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     font-weight: 700;
   }
 `;
 
 export const GradeTitle = styled.h3`
-  font-size: 12;
+  font-size: 17px;
   color: rgba(0, 0, 0, 0.7);
   font-weight: 300;
   text-align: center;
@@ -35,6 +35,7 @@ export const GradeTitle = styled.h3`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 6px;
+  padding-top: 20px;
 `;
 
 export const GradeListItem = styled.li`
@@ -61,12 +62,12 @@ export const GradeDetails = styled.div`
   border-radius: 0 0 8px 8px;
   box-shadow: 0 10px 10px gray;
   span {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6);
   }
   h3 {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.6);
     text-align: center;

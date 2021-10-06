@@ -65,7 +65,7 @@ function StudentGrades({ history }) {
         </GradeList>
       </Container>
     );
-  } return <Loading />;
+  } return <Loading style={{ alignSelf: 'center' }} />;
 }
 
 StudentGrades.propTypes = {

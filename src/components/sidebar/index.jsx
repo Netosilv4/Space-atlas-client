@@ -9,17 +9,27 @@ import { withRouter } from 'react-router-dom';
 import { H4 } from '../UI-Components/styles';
 import { studentContext } from '../../context/studentContext';
 import { UserContext } from '../../context/userContext';
-import { SidebarWrapper, Div } from './styles';
+import { SidebarWrapper, Div, SideBarTitle } from './styles';
 
 function Sidebar({ showSideBar, setSideBar, history }) {
   const {
-    setDisplayNotifications, displayNotifications, selected,
+    setDisplayNotifications, displayNotifications, selected, student,
   } = useContext(studentContext);
   const { logout } = useContext(UserContext);
   const desktop = window.innerWidth > 768;
   return (
     <SidebarWrapper showSideBar={showSideBar}>
       <MdClose size="25px" onClick={() => setSideBar(false)} className="closeBtn" />
+      <SideBarTitle showSideBar={showSideBar}>
+        <img src="./avatarNeto.jpg" alt="Foto do estudante" />
+        <span>
+          Olá,
+          {' '}
+          { student.basicInfo.name.split(' ')[0]}
+          {' '}
+          !
+        </span>
+      </SideBarTitle>
       <Div>
         <H4
           select={displayNotifications}
@@ -37,7 +47,7 @@ function Sidebar({ showSideBar, setSideBar, history }) {
           HORÁRIOS
         </H4>
         <H4 onClick={() => history.push('/grades')} select={selected === '/grades'}>
-          <MdSchool color="white" size={desktop ? '2vw' : '20px'} />
+          <MdSchool color={selected === '/grades' ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
           AVALIAÇÕES
         </H4>
         <H4>

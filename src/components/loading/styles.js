@@ -1,29 +1,32 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
-  animation: dropDown 1s normal;
-  margin-bottom: 50px;
+  height: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h2 {
   word-break: break-word;
   text-align: center;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 100;
   letter-spacing: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   }
   p {
-    font-size: 17px;
+    font-size: 14px;
     text-align: left;
     margin-top: 10px;
   }
   span {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 16px;
+    font-size: 13px;
     text-align: left;
     font-weight: 700;
   }
 `;
 
-export default Container;
+export const dale = styled.h1``;

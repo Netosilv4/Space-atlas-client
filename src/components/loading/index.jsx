@@ -1,7 +1,13 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 function Loading() {
-  return <img width="50px" src="/loadingGif.gif" alt="loading" />;
+  return (
+    <Container>
+      <img width="50px" src="/loadingGif.gif" alt="loading" />
+    </Container>
+  );
 }
 
 export default Loading;

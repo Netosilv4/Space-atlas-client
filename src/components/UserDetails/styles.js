@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const H1 = styled.h1`
-text-align: center;
+  text-align: center;
 `;
 
 export const Img = styled.img`
@@ -31,7 +31,7 @@ export const Button = styled.button`
   color: white;
   padding: 10px 20px;
   border-radius: 100px;
-  font-size:12px;
+  font-size:15px;
   cursor: pointer;
   border: 1px solid gray;
   margin-bottom: 30px;

@@ -5,20 +5,21 @@ export const SidebarWrapper = styled.aside`
     rgb(65, 51, 122),
     rgb(85, 149, 180)
   );
-height: 100vh;
-position: fixed;
-width: 35vw;
-z-index: 1000;
-right: ${(props) => (props.showSideBar ? '0' : '-100vw')};
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-transition: ease-in-out 700ms;
-.closeBtn {
-  align-self: flex-end;
-  color: white;
-  margin:1vh 2vw;
-}
+  overflow-x: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 35vw;
+  z-index: 1000;
+  right: ${(props) => (props.showSideBar ? '0' : '-100vw')};
+  display: flex;
+  flex-direction: column;
+  transition: ease-in-out 700ms;
+  .closeBtn {
+    align-self: flex-end;
+    color: white;
+    margin:1vh 2vw;
+  }
+  box-shadow: 0 5px 7px 3px black;
 @media(min-width: 768px) {
   width: 5%;
   color: white;
@@ -41,4 +42,63 @@ export const Div = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+`;
+
+export const SideBarTitle = styled.div`
+  @media(max-width: 600px) {
+  padding-left:  5px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    padding-left: 42px;
+    height: 40px;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  img {
+    z-index: 10;
+    border-radius: 50%;
+    object-fit: cover;
+    position: fixed;
+  }
+  ${(props) => {
+    if (props.showSideBar) {
+      return {
+        width: '100%',
+        display: 'flex',
+        img: {
+          height: '40px',
+          width: '40px',
+        },
+        span: {
+          transition: 'ease-in 765ms',
+          transform: 'translateX(0)',
+          backgroundColor: 'whitesmoke',
+          borderRadius: '50px',
+          height: '40px',
+          opacity: '1',
+          width: '90%',
+        },
+      };
+    } return {
+      width: '100%',
+      display: 'flex',
+      img: {
+        height: '40px',
+        width: '40px',
+      },
+      span: {
+        opacity: '0',
+        width: '0',
+      },
+    };
+  }}
+  }
+  display: none;
 `;

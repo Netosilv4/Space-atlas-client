@@ -76,11 +76,7 @@ function StudentSchedule({ history }) {
         </TableContainer>
       </Container>
     );
-  } return (
-    <Container>
-      <Loading />
-    </Container>
-  );
+  } return <Loading />;
 }
 
 StudentSchedule.propTypes = {

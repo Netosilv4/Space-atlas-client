@@ -13,19 +13,18 @@ export const Container = styled.div`
   word-break: break-word;
   text-align: center;
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 4px;
-  margin-bottom: 20px;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     text-align: left;
     margin-top: 10px;
   }
   span {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     font-weight: 700;
   }
@@ -58,7 +57,7 @@ export const Grade = styled.tr`
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   padding: 10px 5px;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 12px;
+  font-size: 14px;
   text-align: left;
   font-weight: 700;
 `;

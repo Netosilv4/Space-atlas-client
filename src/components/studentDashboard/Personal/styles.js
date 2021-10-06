@@ -8,19 +8,19 @@ export const Container = styled.div`
   word-break: break-word;
   text-align: center;
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 100;
   letter-spacing: 4px;
   margin-bottom: 20px;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     text-align: left;
     margin-top: 10px;
   }
   span {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+    font-size: 16px;
     text-align: left;
     font-weight: 700;
   }
@@ -34,7 +34,7 @@ export const Parents = styled.div`
   border-bottom: 1px solid lightgray;
   margin-bottom: 15px;
   p {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.5);
   }
