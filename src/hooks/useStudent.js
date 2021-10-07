@@ -6,7 +6,7 @@ const useStudent = (user) => {
 
   useEffect(async () => {
     axios.defaults.headers.authorization = `Bearer ${user.token}`;
-    const { data } = await axios.post('http://localhost:8080/student', {
+    const { data } = await axios.post('https://atlas-school-system.herokuapp.com/student', {
       register: user.register,
     });
     setStudent({ ...data.student });

@@ -9,7 +9,7 @@ const useRequest = () => {
       newValue,
       reason,
     };
-    return axios.post('http://localhost:8080/request', {
+    return axios.post('https://atlas-school-system.herokuapp.com/request', {
       register: student.auth.register,
       request,
     });

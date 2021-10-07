@@ -13,7 +13,7 @@ function Chat() {
   const { student } = useContext(studentContext);
 
   useEffect(() => {
-    const socketServer = io('http://localhost:8080');
+    const socketServer = io('https://atlas-school-system.herokuapp.com/');
 
     socketServer.emit('welcome', {
       student,

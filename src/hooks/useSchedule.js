@@ -5,7 +5,7 @@ const useSchedule = (student) => {
   const [schedule, setSchedule] = useState();
 
   const getSchedule = async () => {
-    const { data: { response } } = await axios.post('http://localhost:8080/schedule', {
+    const { data: { response } } = await axios.post('https://atlas-school-system.herokuapp.com/schedule', {
       register: student.auth.register,
       className: student.basicInfo.class,
     });
