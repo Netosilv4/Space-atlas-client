@@ -11,6 +11,7 @@ import UserDetails from '../UserDetails';
 import Requests from '../../pages/Requests';
 import StudentSchedule from '../studentSchedule';
 import StudentGrades from '../studentGrades';
+import Chat from '../chat';
 
 function StudentDashboard() {
   const { student } = useContext(studentContext);
@@ -26,6 +27,7 @@ function StudentDashboard() {
             <Route exact path="/requests" component={Requests} />
             <Route exact path="/schedule" component={StudentSchedule} />
             <Route exact path="/grades" component={StudentGrades} />
+            <Route path="/chat" component={Chat} />
             <Route path="/" component={UserDetails} />
           </Switch>
         </Div>
