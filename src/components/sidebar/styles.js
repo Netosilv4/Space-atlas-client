@@ -6,6 +6,7 @@ export const SidebarWrapper = styled.aside`
     rgb(85, 149, 180)
   );
   overflow-x: hidden;
+  justify-content: space-between;
   height: 100vh;
   position: fixed;
   width: 35vw;
@@ -60,6 +61,7 @@ export const SideBarTitle = styled.div`
     height: 40px;
     white-space: nowrap;
     overflow-x: hidden;
+    transition: ease-in-out 765ms 400ms;
   }
   img {
     z-index: 10;
@@ -77,12 +79,9 @@ export const SideBarTitle = styled.div`
           width: '40px',
         },
         span: {
-          transition: 'ease-in 765ms',
-          transform: 'translateX(0)',
           backgroundColor: 'whitesmoke',
           borderRadius: '50px',
           height: '40px',
-          opacity: '1',
           width: '90%',
         },
       };
@@ -94,7 +93,6 @@ export const SideBarTitle = styled.div`
         width: '40px',
       },
       span: {
-        opacity: '0',
         width: '0',
       },
     };
