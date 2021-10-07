@@ -46,3 +46,18 @@ export const Button = styled.button`
   border: 1px solid gray;
   cursor: pointer;
 `;
+
+export const Li = styled.p`
+  align-self: flex-start;
+  font-size: 15px;
+  color: gray;
+  font-weight: 700;
+  margin-top: 40px;
+`;
+
+export const P = styled.p`
+  font-size: 13px;
+  align-self: flex-start;
+  padding-top: 3px;
+  color: rgba(0, 0, 0, 0.5);
+`;
