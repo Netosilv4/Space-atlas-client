@@ -36,6 +36,12 @@ function Chat() {
     setMessage('');
   };
 
+  const handleKeyDown = (event, msg, studentName) => {
+    if (event.charCode === 13) {
+      sendMessage(msg, studentName);
+    }
+  };
+
   return (
     <Container>
       <Messages>
@@ -52,7 +58,7 @@ function Chat() {
         ))}
       </Messages>
       <ButtonWrapper>
-        <MessageArea type="text" value={message} onChange={({ target }) => setMessage(target.value)} />
+        <MessageArea type="text" value={message} onChange={({ target }) => setMessage(target.value)} onKeyPress={(event) => handleKeyDown(event, message, student.basicInfo.name)} />
         <SendButton type="button" onClick={() => sendMessage(message, student.basicInfo.name)}>Enviar</SendButton>
       </ButtonWrapper>
     </Container>
