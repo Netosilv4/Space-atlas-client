@@ -10,7 +10,7 @@ import { UserContext } from '../../context/userContext';
 import useStyles, {
   Main, Section, Div, Button, P,
 } from './styles';
-import useLoginImage from '../../hooks/useLoginImage';
+import useLogin from '../../hooks/useLogin';
 
 function Copyright() {
   return (
@@ -31,7 +31,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const { login, userMessage } = useContext(UserContext);
   const classes = useStyles();
-  const { image } = useLoginImage();
+  const { image, handleKeyDown } = useLogin();
 
   return (
     <Main background={image}>
@@ -53,6 +53,7 @@ export default function Login() {
               autoFocus
               value={register}
               onChange={({ target }) => setRegister(target.value)}
+              onKeyPress={(event) => handleKeyDown(event, register, password)}
             />
             <TextField
               variant="outlined"
@@ -66,6 +67,7 @@ export default function Login() {
               autoComplete="current-password"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
+              onKeyPress={(event) => handleKeyDown(event, register, password)}
             />
           </Div>
           <Div style={{ width: '90%' }}>

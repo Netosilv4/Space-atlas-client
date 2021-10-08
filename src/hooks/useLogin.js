@@ -1,7 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../context/userContext';
 
-const useLoginImage = () => {
+const useLogin = () => {
   const [image, setImage] = useState();
+  const { login } = useContext(UserContext);
+
+  const handleKeyDown = (event, register, password) => {
+    if (event.charCode === 13) {
+      login(register, password);
+    }
+  };
 
   function randomBackground() {
     const array = [
@@ -21,8 +29,8 @@ const useLoginImage = () => {
   }, []);
 
   return {
-    image,
+    image, handleKeyDown,
   };
 };
 
-export default useLoginImage;
+export default useLogin;
