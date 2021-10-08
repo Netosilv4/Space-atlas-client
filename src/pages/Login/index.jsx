@@ -80,7 +80,7 @@ export default function Login() {
             </Button>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" style={{ paddingRight: '0' }} />}
-              label={<P>lembrar de mim</P>}
+              label={<P>lembra de mim</P>}
             />
           </Div>
           { userMessage ? <p style={{ color: 'red' }}>{userMessage}</p> : null }
