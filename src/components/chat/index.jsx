@@ -33,6 +33,7 @@ function Chat() {
       userMessage,
       user: user.split(' ')[0],
     });
+    setMessage('');
   };
 
   return (
