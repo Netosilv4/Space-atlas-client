@@ -6,11 +6,10 @@ const useGrades = () => {
   const [subjects, setSubjects] = useState();
 
   const getGrades = async (register) => {
-    const { data: { response } } = await axios.post('https://atlas-school-system.herokuapp.com/grades', {
-      register,
-    });
-    setGrades({ ...response.grades.grades });
-    setSubjects([...response.schoolSubjects]);
+    const { data } = await axios
+      .get(`https://atlas-school-system.herokuapp.com/grades?register=${register}`);
+    setGrades({ ...data.grades.grades });
+    setSubjects([...data.subjects]);
   };
 
   return {

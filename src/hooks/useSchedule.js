@@ -5,12 +5,11 @@ const useSchedule = (student) => {
   const [schedule, setSchedule] = useState();
 
   const getSchedule = async () => {
-    const { data: { response } } = await axios.post('https://atlas-school-system.herokuapp.com/schedule', {
-      register: student.auth.register,
-      className: student.basicInfo.class,
-    });
-    const scheduleAux = Object.values(response.classSchedule.schedule)
-      .map((e) => e.map((day) => response.schoolSubjects
+    const { data } = await axios
+      .get(`https://atlas-school-system.herokuapp.com/schedule?className=${student.basicInfo.class}&register=${student.auth.register}`);
+
+    const scheduleAux = Object.values(data.studentClass.schedule)
+      .map((e) => e.map((day) => data.schoolSubjects
         .find((subject) => subject.subjectID === day)));
     setSchedule([...scheduleAux]);
   };
