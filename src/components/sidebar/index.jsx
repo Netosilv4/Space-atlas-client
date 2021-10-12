@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import {
   MdNotificationsActive,
-  MdPersonPin, MdAlarm, MdSchool, MdBuild, MdKeyboardReturn, MdClose,
+  MdPersonPin, MdAlarm, MdSchool, MdBuild, MdKeyboardReturn, MdClose, MdChat,
 } from 'react-icons/md';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
@@ -49,6 +49,10 @@ function Sidebar({ showSideBar, setSideBar, history }) {
         <H4 onClick={() => history.push('/grades')} select={selected === '/grades'}>
           <MdSchool color={selected === '/grades' ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
           AVALIAÇÕES
+        </H4>
+        <H4 onClick={() => history.push('/chat')} select={selected === '/chat'}>
+          <MdChat color={selected === '/chat' ? 'rgb(245, 233, 96)' : 'white'} size={desktop ? '2vw' : '20px'} />
+          CHAT
         </H4>
         <H4>
           <MdBuild color="white" size={desktop ? '2vw' : '20px'} />

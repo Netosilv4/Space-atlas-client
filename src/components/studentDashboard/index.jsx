@@ -22,12 +22,12 @@ function StudentDashboard() {
       <Main>
         <Header history={history} />
         <Notifications />
-        <Div>
+        <Div id="div-scroll">
           <Switch>
             <Route exact path="/requests" component={Requests} />
             <Route exact path="/schedule" component={StudentSchedule} />
             <Route exact path="/grades" component={StudentGrades} />
-            <Route path="/chat" component={Chat} />
+            <Route exact path="/chat" component={Chat} />
             <Route path="/" component={UserDetails} />
           </Switch>
         </Div>

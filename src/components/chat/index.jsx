@@ -1,16 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
+import PropTypes from 'prop-types';
+import { RiSendPlaneFill } from 'react-icons/ri';
 import { studentContext } from '../../context/studentContext';
 import {
   ButtonWrapper,
-  Container, MessageArea, Messages, SendButton,
+  Container, MessageArea, Messages, SendButton, MessageBox, MessageHour, MessageUsername,
 } from './styles';
+import useAutoScroll from '../../hooks/useAutoScroll';
 
-function Chat() {
+function Chat({ history }) {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [userSocket, setSocket] = useState();
-  const { student } = useContext(studentContext);
+  const { student, setSelected } = useContext(studentContext);
+  useAutoScroll(messages);
 
   useEffect(() => {
     const socketServer = io('https://atlas-school-system.herokuapp.com/');
@@ -26,14 +30,17 @@ function Chat() {
     });
 
     setSocket(socketServer);
+    setSelected(history.location.pathname);
   }, []);
 
   const sendMessage = (userMessage, user) => {
-    userSocket.emit('sendMessage', {
-      userMessage,
-      user: user.split(' ')[0],
-    });
-    setMessage('');
+    if (message !== '') {
+      userSocket.emit('sendMessage', {
+        userMessage,
+        user: user.split(' ')[0],
+      });
+      setMessage('');
+    }
   };
 
   const handleKeyDown = (event, msg, studentName) => {
@@ -46,23 +53,27 @@ function Chat() {
     <Container>
       <Messages>
         {messages.map((e) => (
-          <p>
-            {e.user}
-            {' '}
-            -
-            {' '}
+          <MessageBox side={e.user === student.basicInfo.name.split(' ')[0]}>
+            <MessageUsername>
+              {e.user}
+            </MessageUsername>
             {e.message}
-            {' '}
-            {e.hour}
-          </p>
+            <MessageHour>
+              {e.hour}
+            </MessageHour>
+          </MessageBox>
         ))}
       </Messages>
       <ButtonWrapper>
         <MessageArea type="text" value={message} onChange={({ target }) => setMessage(target.value)} onKeyPress={(event) => handleKeyDown(event, message, student.basicInfo.name)} />
-        <SendButton type="button" onClick={() => sendMessage(message, student.basicInfo.name)}>Enviar</SendButton>
+        <SendButton type="button" onClick={() => sendMessage(message, student.basicInfo.name)}><RiSendPlaneFill /></SendButton>
       </ButtonWrapper>
     </Container>
   );
 }
+
+Chat.propTypes = {
+  history: PropTypes.objectOf(String).isRequired,
+};
 
 export default Chat;
