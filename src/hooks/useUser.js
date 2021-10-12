@@ -13,13 +13,17 @@ const useUsers = () => {
   }, []);
 
   const login = async (register, password) => {
-    const { data } = await axios
-      .get(`https://atlas-school-system.herokuapp.com/login?register=${register}&password=${password}`);
+    try {
+      const { data } = await axios
+        .get(`https://atlas-school-system.herokuapp.com/login?register=${register}&password=${password}`);
 
-    if (data.token) {
-      localStorage.setItem('user', JSON.stringify({ ...data }));
-      setUser(data);
-    } else {
+      if (data.token) {
+        localStorage.setItem('user', JSON.stringify({ ...data }));
+        setUser(data);
+      }
+    } catch (err) {
+      const { response: { data } } = err;
+
       setUserMessage(data.message);
     }
   };

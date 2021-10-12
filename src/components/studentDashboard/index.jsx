@@ -14,8 +14,12 @@ import StudentGrades from '../studentGrades';
 import Chat from '../chat';
 
 function StudentDashboard() {
-  const { student } = useContext(studentContext);
+  const { student, studentMessage } = useContext(studentContext);
   const history = useHistory();
+
+  if (studentMessage) {
+    return <div>{ studentMessage}</div>;
+  }
 
   return student ? (
     <BrowserRouter>

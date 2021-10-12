@@ -13,11 +13,11 @@ export const StudentProvider = ({ children }) => {
   const [displayNotifications, setDisplayNotifications] = useState(false);
   const { setSelected, selected } = useSelectedPage();
 
-  const { student } = useStudent(user);
+  const { student, studentMessage } = useStudent(user);
 
   return (
     <studentContext.Provider value={{
-      student, displayNotifications, setDisplayNotifications, setSelected, selected,
+      student, displayNotifications, setDisplayNotifications, setSelected, selected, studentMessage,
     }}
     >
       {children}
