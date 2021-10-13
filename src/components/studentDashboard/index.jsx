@@ -16,6 +16,7 @@ import Chat from '../chat';
 function StudentDashboard() {
   const { student, studentMessage } = useContext(studentContext);
   const history = useHistory();
+  console.log('salve', useHistory());
 
   if (studentMessage) {
     return <div>{ studentMessage}</div>;

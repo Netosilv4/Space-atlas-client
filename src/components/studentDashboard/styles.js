@@ -10,7 +10,7 @@ export const Div = styled.section`
   width:90vw;
   height: 91vh;
   margin: auto;
-  background-color: whitesmoke;
+  background-color: ${(props) => (props.history === '/chat' ? 'blue' : 'whitesmoke')};
   border-radius: 8px;
   overflow-y: scroll;
 `;

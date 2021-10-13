@@ -31,6 +31,16 @@ function Chat({ history }) {
 
     setSocket(socketServer);
     setSelected(history.location.pathname);
+
+    const div = document.querySelector('#div-scroll');
+    div.style.backgroundImage = 'url("https://www.papeiseparede.com.br/3257-thickbox_default/papel-de-parede-whatsapp-branco-e-azul.jpg")';
+    div.style.backgroundSize = '300px';
+  }, []);
+
+  useEffect(() => () => {
+    const div = document.querySelector('#div-scroll');
+    div.style.backgroundColor = 'whitesmoke';
+    div.style.backgroundImage = null;
   }, []);
 
   const sendMessage = (userMessage, user) => {
